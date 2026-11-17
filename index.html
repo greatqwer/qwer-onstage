@@ -1,0 +1,1111 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>QWER 라스트 스테이지</title>
+<meta name="description" content="QWER이 발매한 전곡의 마지막 공연 날짜와 장소를 정리한 아카이브">
+<style id="page-style">
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root{
+  --bg:#EEEFEA;
+  --surface:#FFFFFF;
+  --surface-2:#E4E6DE;
+  --ink:#181A17;
+  --muted:#5C6058;
+  --line:#D3D6CB;
+  --accent:#FF4630;
+  --accent-ink:#3A0E08;
+  --teal:#0E8C7F;
+  --teal-soft:#DCF1EC;
+  --amber:#B8790A;
+  --amber-soft:#F5E8CE;
+  --grey-soft:#E7E7E2;
+  --shadow: 0 1px 0 rgba(24,26,23,0.06);
+  --focus: #1B6FE0;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15161A;
+    --surface:#1D1F23;
+    --surface-2:#26282D;
+    --ink:#EDEEE7;
+    --muted:#9B9E97;
+    --line:#34363B;
+    --accent:#FF5C46;
+    --accent-ink:#FFE3DD;
+    --teal:#4FD9C4;
+    --teal-soft:#123833;
+    --amber:#E3B24C;
+    --amber-soft:#3A2E13;
+    --grey-soft:#26282D;
+    --shadow: 0 1px 0 rgba(0,0,0,0.3);
+    --focus: #6AA6FF;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15161A;
+  --surface:#1D1F23;
+  --surface-2:#26282D;
+  --ink:#EDEEE7;
+  --muted:#9B9E97;
+  --line:#34363B;
+  --accent:#FF5C46;
+  --accent-ink:#FFE3DD;
+  --teal:#4FD9C4;
+  --teal-soft:#123833;
+  --amber:#E3B24C;
+  --amber-soft:#3A2E13;
+  --grey-soft:#26282D;
+  --shadow: 0 1px 0 rgba(0,0,0,0.3);
+  --focus: #6AA6FF;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Noto Sans KR', -apple-system, sans-serif;
+  padding:0 16px;
+  padding-block:0;
+}
+.wrap{max-width:980px;margin:0 auto;}
+
+.mono{font-family:'JetBrains Mono', ui-monospace, monospace;}
+
+/* ---------- Header ---------- */
+header.top{
+  padding-top:28px;
+  padding-bottom:18px;
+  border-bottom:3px solid var(--ink);
+}
+.brandrow{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.logo{
+  font-family:'Bebas Neue', 'Noto Sans KR', sans-serif;
+  font-size:clamp(40px,9vw,64px);
+  letter-spacing:2px;
+  line-height:0.9;
+  color:var(--ink);
+}
+.logo span{color:var(--accent);}
+.tagline{
+  font-size:14px;
+  font-weight:700;
+  color:var(--muted);
+  letter-spacing:0.3px;
+}
+.subline{
+  margin-top:10px;
+  font-size:13.5px;
+  color:var(--muted);
+  max-width:640px;
+  line-height:1.6;
+}
+.meta-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11.5px;
+  color:var(--muted);
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  padding:3px 9px;
+  border-radius:999px;
+  margin-top:12px;
+}
+.meta-chip b{color:var(--ink);font-weight:600;}
+
+/* ---------- Stats ---------- */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  margin:18px 0 22px;
+}
+.stat{
+  background:var(--surface);
+  padding:14px 12px;
+}
+.stat b{
+  display:block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:24px;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+}
+.stat span{
+  display:block;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:3px;
+}
+@media (max-width:560px){
+  .stats{grid-template-columns:repeat(2,1fr);}
+}
+
+/* ---------- Controls ---------- */
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:14px;
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  background:var(--bg);
+  padding-block:10px;
+  z-index:5;
+}
+.search{
+  position:relative;
+  flex:1 1 220px;
+}
+.search input{
+  width:100%;
+  padding:10px 12px 10px 34px;
+  border:1.5px solid var(--ink);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink);
+  font-size:14px;
+  font-family:inherit;
+}
+.search input:focus{outline:2px solid var(--focus);outline-offset:1px;}
+.search svg{
+  position:absolute;left:10px;top:50%;transform:translateY(-50%);
+  width:15px;height:15px;stroke:var(--muted);
+}
+select#sortSel{
+  padding:10px 30px 10px 12px;
+  border:1.5px solid var(--ink);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink);
+  font-size:13.5px;
+  font-family:inherit;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235C6058'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+}
+.chipbar{
+  display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;
+}
+.chip{
+  font-size:12.5px;
+  padding:6px 11px;
+  border-radius:999px;
+  border:1.3px solid var(--line);
+  background:var(--surface);
+  color:var(--muted);
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:500;
+  white-space:nowrap;
+}
+.chip:hover{border-color:var(--ink);color:var(--ink);}
+.chip.active{
+  background:var(--ink);
+  color:var(--bg);
+  border-color:var(--ink);
+}
+:root[data-theme="dark"] .chip.active,
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.active{background:var(--ink);color:var(--bg);}}
+
+/* ---------- Table (desktop) ---------- */
+.tablewrap{
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface);
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13.5px;
+  min-width:760px;
+}
+thead th{
+  text-align:left;
+  font-size:11px;
+  letter-spacing:0.5px;
+  color:var(--muted);
+  font-weight:700;
+  padding:11px 12px;
+  border-bottom:2px solid var(--ink);
+  white-space:nowrap;
+}
+tbody td{
+  padding:12px;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--surface-2);}
+.song-title{font-weight:700;font-size:14px;}
+.song-sub{font-size:11.5px;color:var(--muted);margin-top:1px;}
+.album-tag{
+  display:inline-block;
+  font-size:11px;
+  color:var(--muted);
+  background:var(--grey-soft);
+  border-radius:5px;
+  padding:2px 7px;
+  margin-top:4px;
+}
+.date-cell{
+  font-family:'JetBrains Mono',monospace;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.venue-city{font-size:11.5px;color:var(--muted);margin-top:2px;}
+.tour-tag{
+  font-size:11px;
+  color:var(--teal);
+  background:var(--teal-soft);
+  border-radius:5px;
+  padding:2px 7px;
+  display:inline-block;
+  margin-top:3px;
+}
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-size:11px;
+  font-weight:600;
+  padding:3px 8px;
+  border-radius:999px;
+}
+.status.ok{background:var(--teal-soft);color:var(--teal);}
+.status.partial{background:var(--amber-soft);color:var(--amber);}
+.status.na{background:var(--grey-soft);color:var(--muted);}
+.srclink{
+  font-size:11px;
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px dotted var(--muted);
+}
+.srclink:hover{color:var(--accent);border-color:var(--accent);}
+
+/* ---------- Mobile cards ---------- */
+.cards{display:none;flex-direction:column;gap:10px;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:13px 14px;
+}
+.card-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;}
+.card-row{
+  display:flex;justify-content:space-between;gap:10px;
+  font-size:12.5px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);
+}
+.card-row .k{color:var(--muted);flex-shrink:0;}
+.card-row .v{text-align:right;}
+
+@media (max-width:720px){
+  .tablewrap{display:none;}
+  .cards{display:flex;}
+}
+
+.empty{
+  text-align:center;
+  padding:40px 12px;
+  color:var(--muted);
+  font-size:13.5px;
+}
+
+/* ---------- History (per-song performance drill-down) ---------- */
+.song-row{cursor:pointer;}
+.card{cursor:pointer;}
+.hist-count{
+  display:inline-block;
+  margin-top:6px;
+  font-size:10.5px;
+  color:var(--accent);
+  font-weight:600;
+  white-space:nowrap;
+}
+.history-tr td{
+  background:var(--surface-2);
+  padding:0 12px 14px;
+  border-bottom:1px solid var(--line);
+}
+.hist-list{
+  list-style:none;
+  margin:10px 0 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.hist-item{
+  display:grid;
+  grid-template-columns:96px 1fr auto;
+  gap:10px;
+  align-items:start;
+  padding:9px 0;
+  border-top:1px dashed var(--line);
+  font-size:12.5px;
+}
+.hist-item:first-child{border-top:none;}
+.hist-date{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.hist-mid{color:var(--ink);}
+.hist-note{font-size:11px;color:var(--amber);margin-top:2px;}
+.hist-src{text-align:right;white-space:nowrap;}
+.hist-cap{font-size:11px;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px dashed var(--line);}
+.hist-empty{font-size:12.5px;color:var(--muted);padding:12px 0;}
+.hist-toggle-btn{
+  font-size:11.5px;
+  font-weight:600;
+  color:var(--accent);
+  background:none;
+  border:1.3px solid var(--accent);
+  border-radius:999px;
+  padding:5px 11px;
+  cursor:pointer;
+  font-family:inherit;
+}
+.hist-toggle-btn:hover{background:var(--accent);color:var(--surface);}
+
+@media (max-width:520px){
+  .hist-item{grid-template-columns:1fr;gap:3px;}
+  .hist-src{text-align:left;}
+}
+
+/* ---------- Admin / edit mode ---------- */
+.admin-panel{
+  background:var(--surface);
+  border:2px solid var(--accent);
+  border-radius:12px;
+  padding:16px 16px 18px;
+  margin:16px 0 24px;
+}
+.admin-head{margin-bottom:12px;}
+.admin-head b{font-size:14px;}
+.admin-sub{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5;}
+.admin-row{margin-bottom:10px;}
+.admin-field{margin-bottom:10px;}
+.admin-field label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:4px;font-weight:600;}
+.admin-field input[type="text"],
+.admin-field input[type="date"],
+.admin-field input[type="url"],
+.admin-field select,
+.admin-field textarea,
+.admin-row select{
+  width:100%;
+  padding:8px 10px;
+  border:1.3px solid var(--line);
+  border-radius:7px;
+  background:var(--bg);
+  color:var(--ink);
+  font-size:13px;
+  font-family:inherit;
+}
+.admin-field textarea{resize:vertical;min-height:44px;}
+.admin-grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media (max-width:520px){.admin-grid2{grid-template-columns:1fr;}}
+.admin-hist-list{list-style:none;margin:0 0 10px;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.admin-hist-item{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px 10px;font-size:12px;border-top:1px dashed var(--line);}
+.admin-hist-item:first-child{border-top:none;}
+.admin-hist-item button{
+  font-size:11px;color:var(--muted);background:none;border:1px solid var(--line);
+  border-radius:999px;padding:3px 9px;cursor:pointer;font-family:inherit;
+}
+.admin-hist-item button:hover{color:var(--accent);border-color:var(--accent);}
+.admin-add-hist{border:1px dashed var(--line);border-radius:8px;padding:10px;margin-bottom:12px;}
+.admin-toggle-src{display:flex;gap:6px;margin-bottom:8px;}
+.admin-toggle-src button{
+  flex:1;font-size:11.5px;padding:6px;border-radius:6px;border:1.3px solid var(--line);
+  background:var(--bg);color:var(--muted);cursor:pointer;font-family:inherit;font-weight:600;
+}
+.admin-toggle-src button.active{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
+.admin-btn{
+  font-size:13px;font-weight:700;padding:9px 16px;border-radius:8px;border:none;cursor:pointer;font-family:inherit;
+}
+.admin-btn.primary{background:var(--accent);color:#fff;}
+.admin-btn.primary:disabled{background:var(--grey-soft);color:var(--muted);cursor:not-allowed;}
+.admin-btn.ghost{background:none;color:var(--muted);border:1.3px solid var(--line);}
+.admin-btn.danger{background:none;color:var(--accent);border:1.3px solid var(--accent);}
+.admin-msg{font-size:12px;margin-top:10px;min-height:16px;}
+.admin-msg.ok{color:var(--teal);}
+.admin-msg.err{color:var(--accent);}
+
+footer{
+  margin:28px 0 32px;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  font-size:11.5px;
+  color:var(--muted);
+  line-height:1.8;
+}
+footer b{color:var(--ink);}
+</style>
+
+<div class="wrap" id="pageWrap">
+
+  <header class="top">
+    <div class="brandrow">
+      <div class="logo">QWER<span>.</span></div>
+      <div class="tagline">LAST STAGE LOG</div>
+    </div>
+    <p class="subline">쵸단·마젠타·히나·시연, QWER이 발매한 전곡(외부 콜라보·OST 포함)을 대상으로 각 곡이 <b style="color:var(--ink)">가장 최근에 라이브로 공연된 날짜와 장소</b>를 정리했습니다. 곡을 누르면 <b style="color:var(--ink)">최근 공연 히스토리(최대 10건)</b>가 펼쳐집니다. setlist.fm 및 공식 자료를 바탕으로 조사했습니다.</p>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;">
+      <span class="meta-chip">마지막 갱신 <b id="updatedAt">2026-11-09</b> · 최신 공연 반영: ROCKATION : ROCKET LAUNCH!! 쿠알라룸푸르 공연 (2026-11-07)</span>
+      <button id="adminToggleBtn" class="hist-toggle-btn" style="display:none;" onclick="toggleAdmin()" title="곡 정보를 직접 추가·수정하고 저장할 수 있습니다">⚙ 편집 모드</button>
+    </div>
+  </header>
+
+  <div id="adminPanel" class="admin-panel" hidden></div>
+
+  <div class="stats" id="statsRow"></div>
+
+  <div class="controls">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="searchInput" type="text" placeholder="곡 제목 또는 앨범으로 검색 (예: 고민중독, MANITO)"/>
+    </div>
+    <select id="sortSel">
+      <option value="recent">마지막 공연 최신순</option>
+      <option value="oldest">마지막 공연 오래된순</option>
+      <option value="release">발매일순</option>
+      <option value="name">곡명 가나다순</option>
+    </select>
+  </div>
+
+  <div class="chipbar" id="chipBar"></div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>곡명 / 앨범</th>
+          <th>발매일</th>
+          <th>마지막 공연</th>
+          <th>장소</th>
+          <th>투어·행사</th>
+          <th>확인</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div class="cards" id="cards"></div>
+  <div class="empty" id="emptyMsg" hidden>검색 결과가 없습니다.</div>
+
+  <footer>
+    <p><b>조사 방법</b> — setlist.fm에 기록된 QWER의 공연 약 27건(ROCKATION : ROCKET LAUNCH!! 국내외 투어, ROCKATION 1차 투어, 1·2·QWER! 팬콘서트, 각종 페스티벌·시상식·콜라보 무대 등, 2024.11~2026.10)을 개별 세트리스트 단위로 직접 대조해 곡별 최근 공연 이력을 구성했습니다. 나무위키 'QWER/공연 및 행사' 문서와 공식 발표도 보조 자료로 함께 확인했습니다. 2026년 10월 일본 투어(후쿠오카·오사카·도쿄) 공연에서는 setlist.fm 기준 'Discord'와 '고민중독(T.B.H)'이 일본어 가사 버전으로 공연된 것으로 표기되어 있어 해당 공연 히스토리에 별도로 표시했습니다(공식 일본어 싱글이 있는 Discord와 달리, 고민중독은 공식 일본어 음원 발매가 확인되지 않아 현지 라이브용 변형으로 보입니다).</p>
+    <p><b>히스토리 표시 기준</b> — 곡을 눌러 펼치면 최근 공연부터 최대 10건까지 표시됩니다. setlist.fm은 관객이 직접 등록하는 크라우드소싱 방식이라 소규모 무대는 누락됐을 수 있고, Discord처럼 자주 연주되는 곡은 실제 누적 공연 횟수(setlist.fm 기준 129회)가 여기 표시된 10건보다 훨씬 많습니다. 즉 이 히스토리는 "확인 가능한 최근 기록"이지 "전체 공연 이력"이 아닙니다.</p>
+    <p><b>콜라보 · OST 곡</b> — League of Legends(동물특공대), FC 온라인(하프타임), 마운틴듀(PLAY.WE.DEW), 던전앤파이터 모바일(Embracing Me), 스타시드: 아스니아 트리거(Shine All Night) 등 외부 브랜드·게임과의 협업으로 QWER 명의로 발매된 곡을 포함했습니다. 이 곡들은 정규 콘서트 세트리스트에 잘 편입되지 않아 라이브 공연 기록 자체가 희소하며, 확인되지 않은 경우 추측하지 않고 "미확인"으로 표기했습니다.</p>
+    <p><b>확인 상태</b> — <span class="status ok" style="margin:0 2px;">확인</span> 셋리스트에서 직접 확인 · <span class="status partial" style="margin:0 2px;">부분확인</span> 라이브 공연이 아니거나(반주/커버 등) 날짜·범위가 추정임 · <span class="status na" style="margin:0 2px;">미확인</span> 공연 기록을 찾지 못함(발매 후 라이브 무대가 없었을 가능성 포함).</p>
+    <p><b>소년만화(Dreamer) · 피카레스크(Picaresque)</b> — ROCKATION : ROCKET LAUNCH!! 서울 공연(9/12~13)에서 미발매 신곡으로 최초 공개된 뒤, 2026-09-21 스페셜 싱글로 정식 발매되었습니다. 이후 투어·페스티벌 무대에서도 꾸준히 라이브로 연주되고 있습니다.</p>
+    <p>더 아는 콜라보 곡이나 새 공연 정보가 있으면 알려주시면 반영해 드립니다.</p>
+  </footer>
+</div>
+
+<script>
+// 이 스크립트 자신의 원본 텍스트를 보관 — 편집 모드 저장 시 CONCERTS/SONGS 선언부만
+// 최신 데이터로 치환해 완전한 새 문서를 만드는 데 사용(라이브 DOM을 직렬화하지 않기 위함)
+const SCRIPT_SOURCE = document.currentScript.textContent;
+
+// ---- 공연(콘서트) 마스터 데이터 : 한 번 조사한 공연을 여러 곡이 공유 참조 ----
+const CONCERTS = {"c260913":{"date":"2026-09-13","venue":"고려대 화정체육관","city":"서울","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/korea-university-hwajeong-gymnasium-seoul-south-korea-6b73c6a2.html"},"c260912":{"date":"2026-09-12","venue":"고려대 화정체육관","city":"서울","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/korea-university-hwajeong-gymnasium-seoul-south-korea-6373c6a3.html"},"c260827":{"date":"2026-08-27","venue":"KINTEX Hall 9","city":"고양","tour":"K-World Dream Awards 2026","src":"https://www.setlist.fm/setlist/qwer/2026/kintex-hall-9-goyang-si-south-korea-53731b29.html"},"c260822":{"date":"2026-08-22","venue":"서울랜드","city":"과천","tour":"CassCool Festival 2026","src":"https://www.setlist.fm/setlist/qwer/2026/seoul-land-gwacheon-si-south-korea-6b733ab2.html"},"c260821b":{"date":"2026-08-21","venue":"BEXCO Auditorium","city":"부산","tour":"제14회 부산국제코미디페스티벌 개막공연","src":"https://www.setlist.fm/setlist/qwer/2026/busan-exhibition-and-convention-center-bexco-auditorium-busan-south-korea-4371278b.html"},"c260821t":{"date":"2026-08-21","venue":"Buzz Rhythm 02","city":"도쿄","tour":"현지 라이브 이벤트","src":"https://www.setlist.fm/setlist/qwer/2026/buzz-rhythm-02-tokyo-japan-437ed73b.html"},"c260814":{"date":"2026-08-14","venue":"전주대학교","city":"전주","tour":"Jeonju Ultimate Music Festival 2026","src":"https://www.setlist.fm/setlist/qwer/2026/jeonju-university-jeonju-south-korea-33724825.html"},"c260731":{"date":"2026-07-31","venue":"송도달빛축제공원","city":"인천","tour":"인천 펜타포트 록 페스티벌 2026","src":"https://www.setlist.fm/setlist/qwer/2026/songdo-moonlight-festival-park-kb-kookmin-card-stage-incheon-south-korea-4b7523aa.html"},"c260725":{"date":"2026-07-25","venue":"NTSU Arena","city":"타오위안(대만)","tour":"ACON 2026","src":"https://www.setlist.fm/setlist/qwer/2026/ntsu-arena-taoyuan-taiwan-53749b11.html"},"c260211":{"date":"2026-02-11","venue":"D Awards 2026 시상식 라이브 무대","city":"서울","tour":"D Awards 2026","src":"https://namu.wiki/w/QWER/%EA%B3%B5%EC%97%B0%20%EB%B0%8F%20%ED%96%89%EC%82%AC"},"c260228":{"date":"2026-02-28","venue":"Theatre at Mediacorp","city":"싱가포르","tour":"ROCKATION","src":"https://www.setlist.fm/setlist/qwer/2026/theatre-at-mediacorp-singapore-singapore-2b428016.html"},"c260117":{"date":"2026-01-17","venue":"Zepp Kuala Lumpur","city":"쿠알라룸푸르","tour":"ROCKATION","src":"https://www.setlist.fm/setlist/qwer/2026/zepp-kuala-lumpur-kuala-lumpur-malaysia-3342801d.html"},"c260103":{"date":"2026-01-03","venue":"The Londoner Theatre","city":"마카오","tour":"ROCKATION","src":"https://www.setlist.fm/setlist/qwer/2026/the-londoner-theatre-macau-macao-sar-china-2342801f.html"},"c250801":{"date":"2025-08-01","venue":"송도달빛축제공원","city":"인천","tour":"인천 펜타포트 록 페스티벌 2025","src":"https://www.setlist.fm/setlist/qwer/2025/songdo-moonlight-festival-park-incheon-south-korea-4b47fb7a.html"},"c250514":{"date":"2025-05-14","venue":"Zepp New Taipei","city":"타이베이","tour":"1, 2, QWER! 팬콘서트","src":"https://www.setlist.fm/setlist/qwer/2025/zepp-new-taipei-taipei-taiwan-359f50b.html"},"c250406":{"date":"2025-04-06","venue":"Zepp Shinjuku","city":"도쿄","tour":"1, 2, QWER! 팬콘서트","src":"https://www.setlist.fm/setlist/qwer/2025/zepp-shinjuku-tokyo-tokyo-japan-b5b95fa.html"},"c250423":{"date":"2025-04-23","venue":"노들섬","city":"서울","tour":"어디로든 버스킹","src":"https://youtu.be/U3ncAuiGa20?si=0wvZVF6_chvwvmgZ"},"c250126":{"date":"2025-01-26","venue":"YES24 라이브홀","city":"서울","tour":"1, 2, QWER! 팬콘서트","src":"https://www.setlist.fm/setlist/qwer/2025/yes24-live-hall-seoul-south-korea-b5c918e.html"},"c250125":{"date":"2025-01-25","venue":"YES24 라이브홀","city":"서울","tour":"1, 2, QWER! 팬콘서트","src":"https://www.setlist.fm/setlist/qwer/2025/yes24-live-hall-seoul-south-korea-35c918f.html"},"c241102":{"date":"2024-11-02","venue":"연세대학교 미래캠퍼스","city":"원주","tour":"넥슨 챔피언스컵 결승 축하공연","src":"https://www.setlist.fm/setlist/qwer/2024/yonsei-university-mirae-campus-wonju-si-south-korea-4b510fde.html"},"c260919":{"date":"2026-09-19","venue":"서울랜드","city":"과천","tour":"Woori Momocon 2026","src":"https://www.setlist.fm/setlist/qwer/2026/seoul-land-gwacheon-si-south-korea-5b719f18.html"},"c260926":{"date":"2026-09-26","venue":"여수세계섬박람회장","city":"여수","tour":"","src":"https://www.setlist.fm/setlist/qwer/2026/yeosu-world-island-expo-yeosu-south-korea-437fc7e7.html"},"c261010":{"date":"2026-10-10","venue":"NTSU Arena","city":"타오위안(대만)","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/ntsu-arena-taoyuan-taiwan-7b73c6a0.html"},"c261011":{"date":"2026-10-11","venue":"NTSU Arena","city":"타오위안(대만)","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/ntsu-arena-taoyuan-taiwan-7373c6a1.html"},"c261013":{"date":"2026-10-13","venue":"UNITEDLAB","city":"후쿠오카","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/unitedlab-fukuoka-japan-6373c6a7.html"},"c261015":{"date":"2026-10-15","venue":"GORILLA HALL OSAKA","city":"오사카","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/gorilla-hall-osaka-osaka-japan-6b73c6a6.html"},"c261017":{"date":"2026-10-17","venue":"Spotify O-EAST","city":"도쿄","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/spotify-o-east-tokyo-japan-7373c6a5.html"},"c261024":{"date":"2026-10-24","venue":"주베트남 한국대사관","city":"하노이","tour":"K-LIVE FESTIVAL 2026","src":"https://www.setlist.fm/setlist/qwer/2026/i-s-quan-han-quc-ti-vit-nam-hanoi-vietnam-337f8481.html"},"c261107":{"date":"2026-11-07","venue":"Mega Star Arena","city":"쿠알라룸푸르","tour":"ROCKATION : ROCKET LAUNCH!!","src":"https://www.setlist.fm/setlist/qwer/2026/mega-star-arena-kuala-lumpur-malaysia-7b73c6a4.html"}};
+
+// ---- 곡 데이터 ----
+// history: 최근 공연부터 최대 10개까지 CONCERTS의 키를 참조 (문자열) 또는 {cid, note} 형태로 개별 비고를 덧붙임
+const SONGS = [{"name":"별의 하모니","sub":"Harmony of Stars","album":"Harmony from Discord","group":"Harmony from Discord","release":"2023-10-18","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260228"]},{"name":"Discord","sub":"타이틀곡 · 한글 병기 없음","album":"Harmony from Discord","group":"Harmony from Discord","release":"2023-10-18","history":["c261107","c261024","c261011","c261010","c260926","c260919","c260913","c260912","c260822","c260814"]},{"name":"수수께끼 다이어리","sub":"Secret Diary","album":"Harmony from Discord","group":"Harmony from Discord","release":"2023-10-18","history":["c261107","c261013","c260912","c260228","c260117","c260103","c250514","c250406","c250126","c250125"]},{"name":"Discord (TAK Remix)","sub":"디지털 싱글 · 한글 병기 없음","album":"Discord (TAK Remix)","group":"Discord (TAK Remix)","release":"2023-12-12","history":[],"status":"na","note":"리믹스 버전이 별도로 구분되어 공연된 기록은 확인되지 않음(원곡 'Discord' 라이브에 흡수되었을 가능성이 높음)"},{"name":"고민중독","sub":"T.B.H · 타이틀곡","album":"MANITO","group":"MANITO","release":"2024-04-01","history":["c261107","c261024",{"cid":"c261017","note":"일본어 가사로 공연(setlist.fm 표기, 공식 일본어 싱글 발매는 확인되지 않음)"},{"cid":"c261015","note":"일본어 가사로 공연(setlist.fm 표기, 공식 일본어 싱글 발매는 확인되지 않음)"},{"cid":"c261013","note":"일본어 가사로 공연(setlist.fm 표기, 공식 일본어 싱글 발매는 확인되지 않음)"},"c261011","c261010","c260926","c260919","c260913"]},{"name":"SODA","sub":"한글 병기 없음","album":"MANITO","group":"MANITO","release":"2024-04-01","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260228","c260117"]},{"name":"자유선언","sub":"Free-Dumb","album":"MANITO","group":"MANITO","release":"2024-04-01","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260228","c260117"]},{"name":"지구정복","sub":"G9JB","album":"MANITO","group":"MANITO","release":"2024-04-01","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260731","c260228"]},{"name":"대관람차","sub":"Ferris Wheel","album":"MANITO","group":"MANITO","release":"2024-04-01","history":["c261010","c260912","c260228","c260117","c260103","c250514","c250406","c250126","c250125"]},{"name":"불꽃놀이","sub":"Make Our Highlight","album":"MANITO","group":"MANITO","release":"2024-04-01","history":["c261011","c260913","c260228","c260117","c260103","c250514","c250406","c250126","c250125"]},{"name":"마니또","sub":"Manito · 타이틀곡","album":"MANITO","group":"MANITO","release":"2024-04-01","status":"partial","note":"보컬이 포함된 완전한 라이브 공연 기록은 확인되지 않았고, 매번 팬콘서트 앙코르에서 반주/영상(VCR)으로만 사용됨","history":[{"cid":"c250514","note":"앙코르 인스트루멘탈 VCR"},{"cid":"c250126","note":"앙코르 인스트루멘탈 VCR"},{"cid":"c250125","note":"앙코르 인스트루멘탈 VCR"}]},{"name":"가짜 아이돌","sub":"Fake Idol · 선공개 싱글","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-02","history":["c261107","c261017","c261013","c261011","c261010","c260926","c260913","c260912","c260822","c260731"]},{"name":"내 이름 맑음","sub":"My Name Is Malguem · 타이틀곡","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260926","c260919","c260913"]},{"name":"사랑하자","sub":"Let's Love","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":["c260228","c260117","c260103","c250514","c250406","c250126","c250125"]},{"name":"달리기","sub":"Run! Run! Run!","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":["c250514","c250406","c250126","c250125"]},{"name":"안녕, 나의 슬픔","sub":"Goodbye My Sadness","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260228","c260117"]},{"name":"메아리","sub":"Rebound","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":["c261011","c261010","c260919","c260913","c260912","c260814","c260228","c260117","c260103","c250801"]},{"name":"INTRO","sub":"앨범 인트로 트랙","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":[],"status":"na","note":"인터루드 특성상 라이브 공연 대상 아님"},{"name":"OUTRO","sub":"앨범 아웃트로 트랙","album":"Algorithm's Blossom","group":"Algorithm's Blossom","release":"2024-09-23","history":[],"status":"na","note":"인터루드 특성상 라이브 공연 대상 아님"},{"name":"청춘서약","sub":"Youth Promise","album":"청춘서약 (디지털 싱글)","group":"청춘서약 (디지털 싱글)","release":"2025-05-10","history":["c261011","c261010","c260913","c260912","c260228","c260117","c260103"]},{"name":"Discord (Japanese Ver.)","sub":"일본어 버전 · 국내 미발매","album":"Discord (Japanese Ver., JP 디지털 싱글)","group":"Discord (Japanese Ver., JP 디지털 싱글)","release":"2025-05-10","note":"2025년 일본 투어 도쿄 공연에서 최초 확인. 2026년 10월 일본 투어(후쿠오카·오사카·도쿄)에서도 setlist.fm 기준 일본어 버전으로 공연된 것으로 확인됨","history":["c261017","c261015","c261013","c250406"]},{"name":"눈물참기","sub":"Dear · 타이틀곡","album":"난 네 편이야, 온 세상이 불협일지라도","group":"난 네 편이야, 온 세상이 불협일지라도","release":"2025-06-09","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260926","c260919","c260913"]},{"name":"행복해져라","sub":"Be Happy","album":"난 네 편이야, 온 세상이 불협일지라도","group":"난 네 편이야, 온 세상이 불협일지라도","release":"2025-06-09","history":["c261011","c261010","c260913","c260912","c260228","c260117","c260103"]},{"name":"검색어는 QWER","sub":"#QWER","album":"난 네 편이야, 온 세상이 불협일지라도","group":"난 네 편이야, 온 세상이 불협일지라도","release":"2025-06-09","history":["c260913","c260822","c260228","c260117","c260103"]},{"name":"Overdrive","sub":"한글 병기 없음","album":"난 네 편이야, 온 세상이 불협일지라도","group":"난 네 편이야, 온 세상이 불협일지라도","release":"2025-06-09","history":["c261107","c261017","c261015","c261011","c261010","c260913","c260912","c260731","c260228","c260117"]},{"name":"D-Day","sub":"한글 병기 없음","album":"난 네 편이야, 온 세상이 불협일지라도","group":"난 네 편이야, 온 세상이 불협일지라도","release":"2025-06-09","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260228","c260117"]},{"name":"Yours Sincerely","sub":"한글 병기 없음","album":"난 네 편이야, 온 세상이 불협일지라도","group":"난 네 편이야, 온 세상이 불협일지라도","release":"2025-06-09","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260228","c260117"]},{"name":"흰수염고래","sub":"Blue Whale · YB 리메이크","album":"흰수염고래 (스페셜 싱글)","group":"흰수염고래 (스페셜 싱글)","release":"2025-10-06","history":[{"cid":"c260211","note":"공식 라이브 무대"},{"cid":"c250801","note":"정식 발매 전 YB 커버로 선공개"}]},{"name":"CEREMONY","sub":"타이틀곡 · 한글 병기 없음","album":"CEREMONY","group":"CEREMONY","release":"2026-04-27","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260919","c260913","c260912"]},{"name":"BAD HABIT","sub":"한글 병기 없음","album":"CEREMONY","group":"CEREMONY","release":"2026-04-27","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260919","c260913","c260912","c260822"]},{"name":"바니바니","sub":"Bani Bani","album":"CEREMONY","group":"CEREMONY","release":"2026-04-27","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912"]},{"name":"Our Voyage","sub":"한글 병기 없음","album":"CEREMONY","group":"CEREMONY","release":"2026-04-27","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260919","c260913","c260912"]},{"name":"PIONEER","sub":"오프닝곡 · 한글 병기 없음","album":"CEREMONY","group":"CEREMONY","release":"2026-04-27","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260913","c260912","c260731"]},{"name":"SHOW DOWN","sub":"'도굴왕' 오프닝 테마 · 국내 미발매","album":"SHOW DOWN (JP 디지털 싱글) / To Be Continued","group":"SHOW DOWN (JP 디지털 싱글) / To Be Continued","release":"2026-07-08","history":["c261107","c261017","c261015","c261013","c261011","c261010","c260919","c260913","c260912","c260822"]},{"name":"To Be Continued","sub":"'도굴왕' 엔딩 테마 · 국내 미발매","album":"To Be Continued (JP EP)","group":"To Be Continued (JP EP)","release":"2026-07-29","history":[],"status":"na","note":"공개 이후 공식 라이브 무대 기록이 아직 확인되지 않음"},{"name":"소년만화","sub":"Dreamer","album":"소년만화 & 피카레스크 (스페셜 싱글)","group":"소년만화 & 피카레스크 (스페셜 싱글)","release":"2026-09-21","note":"두 번째 투어 ROCKATION : ROCKET LAUNCH!! 서울 공연 양일(9/12~13)에서 미발매 신곡으로 최초 공개되었고, 팬 투표(약 2만 7천 명 참여)로 타이틀곡이 정해져 두 곡 모두 2026-09-21 스페셜 싱글로 정식 발매되었습니다. 영어 제목은 'Dreamer'.","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260926","c260919","c260913"]},{"name":"피카레스크","sub":"Picaresque","album":"소년만화 & 피카레스크 (스페셜 싱글)","group":"소년만화 & 피카레스크 (스페셜 싱글)","release":"2026-09-21","note":"두 번째 투어 ROCKATION : ROCKET LAUNCH!! 서울 공연 양일 모두 앙코르 마지막 곡으로 미발매 신곡을 최초 공개했고, 팬 투표(약 2만 7천 명 참여)로 타이틀곡이 정해져 두 곡 모두 2026-09-21 스페셜 싱글로 정식 발매되었습니다.","history":["c261107","c261024","c261017","c261015","c261013","c261011","c261010","c260926","c260913","c260912"]},{"name":"동물특공대","sub":"ANIMA POWER · 콜라보","album":"League of Legends 'Anima Squad' 콜라보","group":"콜라보 · OST","release":"2024-07-16","history":[],"status":"na","note":"뮤직비디오·티저 공개는 확인되나, 공개 콘서트·행사 무대에서 공연된 기록은 찾지 못함"},{"name":"하프타임","sub":"Half-time · FC 온라인 OST","album":"FC 온라인(넥슨) OST 콜라보","group":"콜라보 · OST","release":"2024-11-20","history":["c241102"]},{"name":"PLAY.WE.DEW","sub":"마운틴듀 콜라보","album":"Mountain Dew 공식 캠페인 음원","group":"콜라보 · OST","release":"2025-04-14","status":"ok","note":"공개 후 노들섬 버스킹 무대에서 최초로 라이브 공연되었다는 기록, 공식 자컨 어디로든 버스킹 EP4 참고","history":[{"cid":"c250423","note":"PLAY.WE.DEW 라이브 최초 공개"}]},{"name":"Embracing Me","sub":"QWER ver. · 던전앤파이터 모바일 콜라보","album":"던전앤파이터 모바일 테마곡 콜라보","group":"콜라보 · OST","release":"2023-11-09","history":[],"status":"na","note":"공식 라이브 클립(스튜디오 세션)만 공개되었고, 공개 콘서트·행사 무대에서 공연된 기록은 찾지 못함"},{"name":"Shine All Night (STARSEED Edition)","sub":"스타시드: 아스니아 트리거 OST","album":"컴투스 '스타시드: 아스니아 트리거' OST 콜라보","group":"콜라보 · OST","release":"2024-03-08","status":"na","note":"공식 라이브 클립(스튜디오 세션)만 공개되었고, 공개 콘서트·행사 무대에서 공연된 기록은 찾지 못함","history":[]}];
+
+// ---- render helpers ----
+const fmtDate = d => d ? d : "—";
+const statusLabel = {ok:"확인", partial:"부분확인", na:"미확인"};
+const expanded = new Set();
+
+function resolveHistory(s){
+  return (s.history||[]).map(h=>{
+    const cid = typeof h === "string" ? h : h.cid;
+    const extraNote = typeof h === "object" ? h.note : null;
+    const c = CONCERTS[cid];
+    return {...c, cid, extraNote};
+  }).sort((a,b)=> new Date(b.date) - new Date(a.date));
+}
+function lastOf(s){
+  const hist = resolveHistory(s);
+  return hist.length ? hist[0] : null;
+}
+function dateLabel(h){
+  return h ? (h.dateApprox ? "약 "+h.date : h.date) : "—";
+}
+function statusOf(s){
+  if(s.status) return s.status;
+  return resolveHistory(s).length ? "ok" : "na";
+}
+function slug(name){
+  return name.toLowerCase().replace(/[^a-z0-9가-힣]+/g,"-").replace(/(^-|-$)/g,"") || Math.random().toString(36).slice(2);
+}
+SONGS.forEach(s=>{ if(!s.id) s.id = slug(s.name)+"-"+slug(s.album); });
+function escAttr(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+function escHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function computeStats(){
+  const withDate = SONGS.filter(s=>lastOf(s));
+  const ok = SONGS.filter(s=>statusOf(s)==="ok").length;
+  const mostRecent = withDate.reduce((a,b)=> new Date(lastOf(a).date) > new Date(lastOf(b).date) ? a : b);
+  const oldest = withDate.reduce((a,b)=> new Date(lastOf(a).date) < new Date(lastOf(b).date) ? a : b);
+  return [
+    {n:SONGS.length, l:"수록곡 총합 (콜라보 포함)"},
+    {n:ok, l:"최근 공연 확인됨"},
+    {n:dateLabel(lastOf(mostRecent)), l:"가장 최근 무대 · "+mostRecent.name, mono:true},
+    {n:dateLabel(lastOf(oldest)), l:"가장 오래 쉰 곡 · "+oldest.name, mono:true},
+  ];
+}
+
+function renderStats(){
+  const el = document.getElementById('statsRow');
+  el.innerHTML = computeStats().map(s=>`
+    <div class="stat">
+      <b>${s.n}</b>
+      <span>${s.l}</span>
+    </div>`).join('');
+}
+
+function renderChips(){
+  const bar = document.getElementById('chipBar');
+  const chips = ["전체", ...new Set(SONGS.map(s=>s.group))];
+  bar.innerHTML = chips.map((c,i)=>`<button class="chip ${i===0?'active':''}" data-group="${i===0?'':c}">${c}</button>`).join('');
+  bar.querySelectorAll('.chip').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      bar.querySelectorAll('.chip').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      state.group = btn.dataset.group;
+      render();
+    });
+  });
+}
+
+const state = {q:"", group:"", sort:"recent"};
+
+function getFiltered(){
+  let list = SONGS.filter(s=>{
+    const q = state.q.trim().toLowerCase();
+    const matchQ = !q || (s.name+" "+s.sub+" "+s.album).toLowerCase().includes(q);
+    const matchGroup = !state.group || s.group === state.group;
+    return matchQ && matchGroup;
+  });
+  const sorters = {
+    recent: (a,b)=> (lastOf(b)?new Date(lastOf(b).date):0) - (lastOf(a)?new Date(lastOf(a).date):0),
+    oldest: (a,b)=> (lastOf(a)?new Date(lastOf(a).date):9e15) - (lastOf(b)?new Date(lastOf(b).date):9e15),
+    release: (a,b)=> new Date(a.release) - new Date(b.release),
+    name: (a,b)=> a.name.localeCompare(b.name),
+  };
+  list.sort(sorters[state.sort]);
+  return list;
+}
+
+function historyListHTML(s){
+  const hist = resolveHistory(s);
+  if(!hist.length){
+    return `<div class="hist-empty">확인된 공연 기록이 없습니다.${s.note?" · "+s.note:""}</div>`;
+  }
+  const items = hist.map(h=>{
+    const src = h.src ? `<a class="srclink" href="${h.src}" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 ↗</a>` : `<span class="srclink" style="opacity:.5;">출처 없음</span>`;
+    return `<li class="hist-item">
+      <div class="hist-date mono">${dateLabel(h)}</div>
+      <div class="hist-mid">
+        <div>${h.venue}${h.city?" · "+h.city:""}</div>
+        <span class="tour-tag">${h.tour}</span>
+        ${h.extraNote?`<div class="hist-note">${h.extraNote}</div>`:""}
+      </div>
+      <div class="hist-src">${src}</div>
+    </li>`;
+  }).join('');
+  const cap = (s.history||[]).length >= 10 ? `<div class="hist-cap">최근 10회까지만 표시됩니다. (곡에 따라 setlist.fm 전체 누적 공연 횟수는 이보다 훨씬 많을 수 있음)</div>` : "";
+  return `<ul class="hist-list">${items}</ul>${cap}`;
+}
+
+function rowHTML(s){
+  const st = statusOf(s);
+  const last = lastOf(s);
+  const note = s.note ? `<div class="venue-city" style="margin-top:4px;">${s.note}</div>` : "";
+  const isOpen = expanded.has(s.id);
+  const countBadge = (s.history||[]).length ? `<span class="hist-count">기록 ${s.history.length}건 · ${isOpen?'접기 ▲':'히스토리 보기 ▼'}</span>` : "";
+  return `<tr class="song-row" onclick="toggleHistory('${s.id}')">
+    <td>
+      <div class="song-title">${s.name}</div>
+      <div class="song-sub">${s.sub}</div>
+      <span class="album-tag">${s.album}</span>
+    </td>
+    <td class="date-cell">${fmtDate(s.release)}</td>
+    <td class="date-cell">${dateLabel(last)}</td>
+    <td>
+      <div>${last?last.venue:(s.venue||"—")}</div>
+      <div class="venue-city">${last?last.city:""}</div>
+      ${note}
+    </td>
+    <td><span class="tour-tag">${last?last.tour:"—"}</span></td>
+    <td>
+      <span class="status ${st}">${statusLabel[st]}</span><br/>
+      ${countBadge}
+    </td>
+  </tr>
+  <tr class="history-tr" ${isOpen?"":"hidden"}>
+    <td colspan="6">${historyListHTML(s)}</td>
+  </tr>`;
+}
+
+function cardHTML(s){
+  const st = statusOf(s);
+  const last = lastOf(s);
+  const note = s.note ? `<div class="card-row"><span class="k">비고</span><span class="v">${s.note}</span></div>` : "";
+  const isOpen = expanded.has(s.id);
+  const histBtn = (s.history||[]).length ? `<button class="hist-toggle-btn" onclick="event.stopPropagation();toggleHistory('${s.id}')">공연 히스토리 ${s.history.length}건 ${isOpen?'접기 ▲':'보기 ▼'}</button>` : "";
+  return `<div class="card" onclick="toggleHistory('${s.id}')">
+    <div class="card-head">
+      <div>
+        <div class="song-title">${s.name}</div>
+        <div class="song-sub">${s.sub}</div>
+      </div>
+      <span class="status ${st}">${statusLabel[st]}</span>
+    </div>
+    <span class="album-tag" style="margin-top:8px;">${s.album}</span>
+    <div class="card-row"><span class="k">발매일</span><span class="v date-cell">${fmtDate(s.release)}</span></div>
+    <div class="card-row"><span class="k">마지막 공연</span><span class="v date-cell">${dateLabel(last)}</span></div>
+    <div class="card-row"><span class="k">장소</span><span class="v">${last?last.venue+(last.city?" · "+last.city:""):"—"}</span></div>
+    <div class="card-row"><span class="k">투어·행사</span><span class="v">${last?last.tour:"—"}</span></div>
+    ${note}
+    <div style="margin-top:10px;" onclick="event.stopPropagation()">${histBtn}${isOpen?historyListHTML(s):""}</div>
+  </div>`;
+}
+
+window.toggleHistory = function(id){
+  if(expanded.has(id)) expanded.delete(id); else expanded.add(id);
+  render();
+};
+
+// ================= 편집(관리자) 모드 =================
+let artifactCap = null;
+let adminMode = false;
+let pendingChanges = false;
+let adminSelectedId = "__new__";
+let newSongDraft = null;
+const concertFormMode = {};
+
+function genId(){ return 's'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+function genConcertId(dateStr){
+  const base = 'c' + String(dateStr||'').replace(/-/g,'').slice(2,8);
+  let cid = base || genId(), n = 0;
+  while(CONCERTS[cid]){ n++; cid = base+String.fromCharCode(97+n); }
+  return cid;
+}
+function findSong(id){ return SONGS.find(s=>s.id===id); }
+function blankSongDraft(){ return {history:[]}; }
+
+window.toggleAdmin = function(){
+  adminMode = !adminMode;
+  document.getElementById('adminPanel').hidden = !adminMode;
+  if(adminMode) renderAdminPanel();
+};
+
+window.onAdminSongSelect = function(sel){
+  adminSelectedId = sel.value;
+  renderAdminPanel();
+};
+
+window.setConcertFormMode = function(songId, mode){
+  concertFormMode[songId] = mode;
+  renderAdminPanel();
+};
+
+function showAdminMsg(msg, isErr){
+  const el = document.getElementById('adminSaveMsg');
+  if(!el) return;
+  el.textContent = msg;
+  el.className = 'admin-msg ' + (isErr?'err':'ok');
+}
+
+window.removeHistoryEntry = function(songId, cid){
+  const s = findSong(songId);
+  if(!s) return;
+  s.history = (s.history||[]).filter(h => (typeof h==='string'?h:h.cid) !== cid);
+  pendingChanges = true;
+  renderStats(); render();
+  renderAdminPanel();
+};
+
+window.addExistingHistory = function(songId){
+  const s = findSong(songId);
+  const sel = document.getElementById('existingConcertSel');
+  const noteEl = document.getElementById('existingHistNote');
+  if(!s || !sel || !sel.value) return;
+  const cid = sel.value;
+  const note = noteEl ? noteEl.value.trim() : "";
+  s.history = s.history || [];
+  const already = s.history.some(h => (typeof h==='string'?h:h.cid)===cid);
+  if(!already) s.history.push(note ? {cid, note} : cid);
+  pendingChanges = true;
+  renderStats(); render();
+  renderAdminPanel();
+};
+
+window.addNewHistory = function(songId){
+  const s = findSong(songId);
+  if(!s) return;
+  const date = document.getElementById('newConcertDate').value;
+  const venue = document.getElementById('newConcertVenue').value.trim();
+  const city = document.getElementById('newConcertCity').value.trim();
+  const tour = document.getElementById('newConcertTour').value.trim();
+  const src = document.getElementById('newConcertSrc').value.trim();
+  const note = document.getElementById('newConcertNote').value.trim();
+  if(!date || !venue){ showAdminMsg('날짜와 장소는 필수입니다.', true); return; }
+  const cid = genConcertId(date);
+  CONCERTS[cid] = {date, venue, city, tour: tour||"", src: src||""};
+  s.history = s.history || [];
+  s.history.push(note ? {cid, note} : cid);
+  pendingChanges = true;
+  renderStats(); render();
+  renderAdminPanel();
+};
+
+window.applySongEdits = function(targetId){
+  const name = document.getElementById('fName').value.trim();
+  const sub = document.getElementById('fSub').value.trim();
+  const album = document.getElementById('fAlbum').value.trim();
+  const group = document.getElementById('fGroup').value.trim() || album;
+  const release = document.getElementById('fRelease').value;
+  const status = document.getElementById('fStatus').value;
+  const note = document.getElementById('fNote').value.trim();
+  if(!name){ showAdminMsg('곡명을 입력해주세요.', true); return; }
+
+  if(targetId === '__new__'){
+    const s = {id: genId(), name, sub, album, group, release, history: (newSongDraft&&newSongDraft.history)||[]};
+    if(note) s.note = note;
+    if(status) s.status = status;
+    SONGS.push(s);
+    adminSelectedId = s.id;
+    newSongDraft = null;
+  } else {
+    const s = findSong(targetId);
+    if(!s) return;
+    s.name = name; s.sub = sub; s.album = album; s.group = group; s.release = release;
+    if(note) s.note = note; else delete s.note;
+    if(status) s.status = status; else delete s.status;
+  }
+  pendingChanges = true;
+  renderStats(); renderChips(); render();
+  renderAdminPanel();
+  showAdminMsg('로컬에 반영했습니다. "변경사항 저장"을 눌러야 모두에게 배포됩니다.', false);
+};
+
+window.registerBulkConcert = function(){
+  const date = document.getElementById('bulkDate').value;
+  const tour = document.getElementById('bulkTour').value.trim();
+  const venue = document.getElementById('bulkVenue').value.trim();
+  const city = document.getElementById('bulkCity').value.trim();
+  const src = document.getElementById('bulkSrc').value.trim();
+  const raw = document.getElementById('bulkSetlist').value;
+
+  if(!date || !venue){ showBulkMsg('날짜와 장소는 필수입니다.', true); return; }
+
+  let names = raw.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+  if(names.length <= 1 && raw.includes(',')){
+    names = raw.split(',').map(s=>s.trim()).filter(Boolean);
+  }
+  names = [...new Set(names)];
+  if(!names.length){ showBulkMsg('셋리스트에 곡을 한 곡 이상 입력해주세요.', true); return; }
+
+  const cid = genConcertId(date);
+  CONCERTS[cid] = {date, venue, city, tour: tour||"", src: src||""};
+
+  const matched = [];
+  const unmatched = [];
+  names.forEach(n=>{
+    const nl = n.toLowerCase();
+    const song = SONGS.find(s=>s.name.toLowerCase()===nl) || SONGS.find(s=>(s.sub||"").toLowerCase()===nl);
+    if(song){
+      song.history = song.history || [];
+      if(!song.history.some(h=>(typeof h==='string'?h:h.cid)===cid)) song.history.push(cid);
+      matched.push(song.name);
+    } else {
+      unmatched.push(n);
+    }
+  });
+
+  pendingChanges = true;
+  renderStats(); renderChips(); render();
+  renderAdminPanel();
+
+  let msg = `공연 등록 완료 (${date} · ${venue}). 연결된 곡 ${matched.length}개: ${matched.join(', ')||'없음'}.`;
+  if(unmatched.length){
+    msg += ` 매칭 안 된 곡 ${unmatched.length}개(곡명 철자를 확인하거나, 아래에서 해당 곡을 선택해 "기존 공연에서 선택"으로 직접 연결해주세요): ${unmatched.join(', ')}`;
+  }
+  showBulkMsg(msg, unmatched.length>0);
+};
+
+function showBulkMsg(msg, isWarn){
+  const el = document.getElementById('bulkResultMsg');
+  if(!el) return;
+  el.textContent = msg;
+  el.className = 'admin-msg ' + (isWarn?'err':'ok');
+}
+
+window.deleteSong = function(songId){
+  const s = findSong(songId);
+  if(!s) return;
+  if(s._confirmDelete){
+    const idx = SONGS.indexOf(s);
+    if(idx>=0) SONGS.splice(idx,1);
+    pendingChanges = true;
+    adminSelectedId = '__new__';
+    renderStats(); renderChips(); render();
+    renderAdminPanel();
+  } else {
+    s._confirmDelete = true;
+    renderAdminPanel();
+    setTimeout(()=>{ s._confirmDelete = false; }, 4000);
+  }
+};
+
+function renderAdminPanel(){
+  const panelEl = document.getElementById('adminPanel');
+  if(!panelEl || panelEl.hidden) return;
+
+  const options = ['<option value="__new__">+ 새 곡 추가</option>']
+    .concat(SONGS.map(s=>`<option value="${s.id}" ${s.id===adminSelectedId?'selected':''}>${escHtml(s.name)}${s.sub?(' · '+escHtml(s.sub)):''} — ${escHtml(s.album)}</option>`));
+  const selectHTML = `<select id="adminSongSelect" onchange="onAdminSongSelect(this)">${options.join('')}</select>`;
+
+  const isNew = adminSelectedId === "__new__";
+  let song = isNew ? (newSongDraft || (newSongDraft = blankSongDraft())) : findSong(adminSelectedId);
+  if(!song){ adminSelectedId = "__new__"; song = (newSongDraft = blankSongDraft()); }
+
+  const groupOptionsNow = [...new Set(SONGS.map(s=>s.group))];
+  const mode = concertFormMode[song.id||'__new__'] || 'existing';
+
+  const histHTML = isNew ? "" : `
+    <div class="admin-field">
+      <label>현재 공연 기록 (${(song.history||[]).length}건)</label>
+      <ul class="admin-hist-list">
+        ${(song.history||[]).length ? resolveHistory(song).map(h=>`
+          <li class="admin-hist-item">
+            <span>${dateLabel(h)} · ${escHtml(h.venue||'')} · ${escHtml(h.tour||'')}</span>
+            <button type="button" onclick="removeHistoryEntry('${song.id}','${h.cid}')">삭제</button>
+          </li>`).join('') : `<li class="admin-hist-item"><span style="color:var(--muted)">기록 없음</span></li>`}
+      </ul>
+    </div>
+    <div class="admin-add-hist">
+      <label style="display:block;font-size:11.5px;color:var(--muted);margin-bottom:6px;font-weight:600;">+ 공연 기록 추가</label>
+      <div class="admin-toggle-src">
+        <button type="button" class="${mode==='existing'?'active':''}" onclick="setConcertFormMode('${song.id}','existing')">기존 공연에서 선택</button>
+        <button type="button" class="${mode==='new'?'active':''}" onclick="setConcertFormMode('${song.id}','new')">새 공연 추가</button>
+      </div>
+      ${ mode==='existing' ? `
+        <div class="admin-field">
+          <select id="existingConcertSel">
+            ${Object.entries(CONCERTS).sort((a,b)=>new Date(b[1].date)-new Date(a[1].date)).map(([cid,c])=>`<option value="${cid}">${c.date} · ${escHtml(c.venue)} · ${escHtml(c.tour||'')}</option>`).join('')}
+          </select>
+        </div>
+        <div class="admin-field"><input type="text" id="existingHistNote" placeholder="비고 (선택, 예: 앙코르 인스트루멘탈)"/></div>
+        <button type="button" class="admin-btn ghost" onclick="addExistingHistory('${song.id}')">이 공연 추가</button>
+      ` : `
+        <div class="admin-grid2">
+          <div class="admin-field"><label>날짜</label><input type="date" id="newConcertDate"/></div>
+          <div class="admin-field"><label>장소</label><input type="text" id="newConcertVenue" placeholder="예: 고려대 화정체육관"/></div>
+        </div>
+        <div class="admin-grid2">
+          <div class="admin-field"><label>도시</label><input type="text" id="newConcertCity" placeholder="예: 서울"/></div>
+          <div class="admin-field"><label>투어·행사명</label><input type="text" id="newConcertTour" placeholder="예: ROCKATION"/></div>
+        </div>
+        <div class="admin-field"><label>출처 URL (선택)</label><input type="url" id="newConcertSrc" placeholder="https://..."/></div>
+        <div class="admin-field"><label>비고 (선택)</label><input type="text" id="newConcertNote" placeholder="예: 라이브 최초 공개"/></div>
+        <button type="button" class="admin-btn ghost" onclick="addNewHistory('${song.id}')">새 공연으로 추가</button>
+      `}
+    </div>
+  `;
+
+  panelEl.innerHTML = `
+    <div class="admin-head">
+      <b>편집 모드</b>
+      <span class="admin-sub">곡을 검색·선택해서 정보를 직접 추가·수정하세요. "변경사항 저장"을 눌러야 모두에게 반영됩니다.</span>
+    </div>
+
+    <div class="admin-add-hist" style="margin-bottom:18px;">
+      <div class="admin-head" style="margin-bottom:8px;">
+        <b>🎤 새 무대(공연) 일괄 등록</b>
+        <span class="admin-sub">setlist.fm 등에서 검색되지 않는 공연은 여기서 날짜·무대명·장소·셋리스트를 한 번에 입력하세요. 셋리스트에 적은 곡명과 정확히 일치하는 곡에는 이 공연이 자동으로 연결됩니다.</span>
+      </div>
+      <div class="admin-grid2">
+        <div class="admin-field"><label>날짜</label><input type="date" id="bulkDate"/></div>
+        <div class="admin-field"><label>무대명·행사명</label><input type="text" id="bulkTour" placeholder="예: OO 팬미팅"/></div>
+      </div>
+      <div class="admin-grid2">
+        <div class="admin-field"><label>장소</label><input type="text" id="bulkVenue" placeholder="예: 서울 OO홀"/></div>
+        <div class="admin-field"><label>도시 (선택)</label><input type="text" id="bulkCity" placeholder="예: 서울"/></div>
+      </div>
+      <div class="admin-field"><label>출처 URL (선택)</label><input type="url" id="bulkSrc" placeholder="https://..."/></div>
+      <div class="admin-field">
+        <label>셋리스트 (한 줄에 한 곡씩, 정확한 곡명으로 입력)</label>
+        <textarea id="bulkSetlist" rows="6" placeholder="고민중독
+SODA
+자유선언
+지구정복"></textarea>
+      </div>
+      <button type="button" class="admin-btn primary" onclick="registerBulkConcert()">이 공연 일괄 등록</button>
+      <div id="bulkResultMsg" class="admin-msg"></div>
+    </div>
+
+    <div class="admin-row">${selectHTML}</div>
+    <div class="admin-grid2">
+      <div class="admin-field"><label>곡명</label><input type="text" id="fName" value="${escAttr(song.name)}"/></div>
+      <div class="admin-field"><label>부제</label><input type="text" id="fSub" value="${escAttr(song.sub)}"/></div>
+    </div>
+    <div class="admin-grid2">
+      <div class="admin-field"><label>앨범/발매명</label><input type="text" id="fAlbum" value="${escAttr(song.album)}"/></div>
+      <div class="admin-field"><label>그룹(필터용, 앨범명과 동일해도 됨)</label>
+        <input type="text" id="fGroup" list="groupList" value="${escAttr(song.group)}"/>
+        <datalist id="groupList">${groupOptionsNow.map(g=>`<option value="${escAttr(g)}">`).join('')}</datalist>
+      </div>
+    </div>
+    <div class="admin-grid2">
+      <div class="admin-field"><label>발매일</label><input type="date" id="fRelease" value="${song.release||''}"/></div>
+      <div class="admin-field"><label>확인 상태</label>
+        <select id="fStatus">
+          <option value="" ${!song.status?'selected':''}>자동(기록 유무로 판단)</option>
+          <option value="ok" ${song.status==='ok'?'selected':''}>확인</option>
+          <option value="partial" ${song.status==='partial'?'selected':''}>부분확인</option>
+          <option value="na" ${song.status==='na'?'selected':''}>미확인</option>
+        </select>
+      </div>
+    </div>
+    <div class="admin-field"><label>비고</label><textarea id="fNote">${escHtml(song.note||'')}</textarea></div>
+    ${histHTML}
+    <div class="admin-actions">
+      <button type="button" class="admin-btn primary" onclick="applySongEdits('${isNew?'__new__':song.id}')">${isNew?'이 곡 추가':'이 곡 수정 반영'}</button>
+      ${!isNew?`<button type="button" class="admin-btn danger" onclick="deleteSong('${song.id}')">${song._confirmDelete?'정말 삭제할까요? (다시 클릭)':'이 곡 삭제'}</button>`:''}
+      <span style="flex:1"></span>
+      <button type="button" class="admin-btn primary" id="publishBtn" ${pendingChanges?'':'disabled'} onclick="publishChanges()">변경사항 저장 (모두에게 반영)</button>
+    </div>
+    <div id="adminSaveMsg" class="admin-msg"></div>
+  `;
+}
+
+function buildFullDocumentHTML(){
+  const searchVal = document.getElementById('searchInput').value;
+  const sortVal = document.getElementById('sortSel').value;
+  const wasAdminOpen = adminMode;
+  const adminBtn = document.getElementById('adminToggleBtn');
+  const prevBtnStyle = adminBtn ? adminBtn.getAttribute('style') : null;
+
+  document.getElementById('statsRow').innerHTML = '';
+  document.getElementById('chipBar').innerHTML = '';
+  document.getElementById('tbody').innerHTML = '';
+  document.getElementById('cards').innerHTML = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('sortSel').value = 'recent';
+  document.getElementById('adminPanel').hidden = true;
+  document.getElementById('adminPanel').innerHTML = '';
+  if(adminBtn) adminBtn.setAttribute('style', 'display:none;');
+
+  const styleHTML = document.getElementById('page-style').outerHTML;
+  const wrapHTML = document.getElementById('pageWrap').outerHTML;
+
+  document.getElementById('searchInput').value = searchVal;
+  document.getElementById('sortSel').value = sortVal;
+  document.getElementById('adminPanel').hidden = !wasAdminOpen;
+  if(adminBtn && prevBtnStyle!=null) adminBtn.setAttribute('style', prevBtnStyle);
+  renderStats(); renderChips(); render();
+  if(wasAdminOpen) renderAdminPanel();
+
+  const cleanSongs = SONGS.map(({_confirmDelete, ...rest}) => rest);
+
+  const newScript = SCRIPT_SOURCE
+    .replace(/const CONCERTS = \{[\s\S]*?\};/, 'const CONCERTS = ' + JSON.stringify(CONCERTS) + ';')
+    .replace(/const SONGS = \[[\s\S]*?\];/, 'const SONGS = ' + JSON.stringify(cleanSongs) + ';');
+
+  return '<!DOCTYPE html>\n<html><head><meta charset="UTF-8">'
+    + '<title>QWER 라스트 스테이지</title>'
+    + '<meta name="description" content="QWER이 발매한 전곡의 마지막 공연 날짜와 장소를 정리한 아카이브">'
+    + '</head><body>'
+    + styleHTML
+    + wrapHTML
+    + '<' + 'script>' + newScript + '<' + '/script>'
+    + '</body></html>';
+}
+
+window.publishChanges = async function(){
+  if(!artifactCap){
+    showAdminMsg('편집 저장 기능을 사용할 수 없습니다 (권한 또는 환경 문제).', true);
+    return;
+  }
+  const btn = document.getElementById('publishBtn');
+  if(btn){ btn.disabled = true; btn.textContent = '저장 중...'; }
+  showAdminMsg('저장 중...', false);
+  try{
+    const html = buildFullDocumentHTML();
+    await artifactCap.publish(html);
+    pendingChanges = false;
+    showAdminMsg('저장 완료! 곧 모든 화면이 최신 버전으로 갱신됩니다.', false);
+  }catch(err){
+    const code = err && err.code;
+    if(code === 'not_granted' || code === 'not_writer'){
+      showAdminMsg('이 링크로는 편집 권한이 없어 저장할 수 없습니다.', true);
+    } else if(code === 'conflict'){
+      showAdminMsg('다른 편집이 먼저 저장되어 곧 최신 버전으로 갱신됩니다.', false);
+    } else {
+      showAdminMsg('저장 중 오류가 발생했습니다: ' + (err && err.message ? err.message : String(err)), true);
+    }
+  } finally {
+    const btn2 = document.getElementById('publishBtn');
+    if(btn2){ btn2.disabled = !pendingChanges; btn2.textContent = '변경사항 저장 (모두에게 반영)'; }
+  }
+};
+
+async function initAdmin(){
+  if(!(window.claude && typeof window.claude.use === 'function')) return;
+  try{
+    artifactCap = await window.claude.use('artifact');
+  }catch(e){ artifactCap = null; }
+
+  // 편집 버튼은 실제로 이 문서에 저장 권한이 있는 사람에게만 보여줌.
+  // (링크로 들어온 열람 전용 방문자는 user.canEdit()가 false/알 수 없음 → 버튼 숨김)
+  let canEdit = false;
+  try{
+    const user = await window.claude.use('user');
+    canEdit = !!(user && typeof user.canEdit === 'function' && user.canEdit());
+  }catch(e){ canEdit = false; }
+
+  if(artifactCap && canEdit){
+    const btn = document.getElementById('adminToggleBtn');
+    if(btn) btn.style.display = 'inline-block';
+  }
+  // 참고: 이 표시 여부는 UI상의 편의일 뿐, 실제 보안은 artifactCap.publish() 호출 시
+  // 서버 쪽에서 편집 권한이 없으면 not_granted/not_writer로 거부되는 것으로 담보됨.
+}
+
+function render(){
+  const list = getFiltered();
+  document.getElementById('tbody').innerHTML = list.map(rowHTML).join('');
+  document.getElementById('cards').innerHTML = list.map(cardHTML).join('');
+  document.getElementById('emptyMsg').hidden = list.length !== 0;
+}
+
+document.getElementById('searchInput').addEventListener('input', e=>{
+  state.q = e.target.value;
+  render();
+});
+document.getElementById('sortSel').addEventListener('change', e=>{
+  state.sort = e.target.value;
+  render();
+});
+
+renderStats();
+renderChips();
+render();
+initAdmin();
+</script>
+</body></html>
